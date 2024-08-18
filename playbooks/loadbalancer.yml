@@ -1,0 +1,13 @@
+---
+- hosts: loadbalancer
+  tasks:
+    - name: Install nginx
+      apt: name=nginx state=present update_cache=yes
+
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+        update_cache: yes
+      become: true
+      become_user: root
